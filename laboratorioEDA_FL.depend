@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1507384643 source:c:\users\facundo\documents\tecnologo\eda\laboratorioeda_fl\main.cpp
+	<cstdlib>
+	<iostream>
+	<stdio.h>
+	"Texto.h"
+	"Diccionario.h"
+
+1507073565 source:c:\users\facundo\documents\tecnologo\eda\laboratorioeda_fl\diccionario.cpp
+	"Diccionario.h"
+	<stdlib.h>
+	<stdio.h>
+
+1505240870 c:\users\facundo\documents\tecnologo\eda\laboratorioeda_fl\diccionario.h
+	"Constantes.h"
+
+1505240873 c:\users\facundo\documents\tecnologo\eda\laboratorioeda_fl\constantes.h
+
+1507073669 source:c:\users\facundo\documents\tecnologo\eda\laboratorioeda_fl\palabras.cpp
+	"Palabras.h"
+	<stdlib.h>
+	<stdio.h>
+
+1507076267 c:\users\facundo\documents\tecnologo\eda\laboratorioeda_fl\palabras.h
+	"Constantes.h"
+	"Diccionario.h"
+
+1507587999 source:c:\users\facundo\documents\tecnologo\eda\laboratorioeda_fl\texto.cpp
+	"Texto.h"
+	<stdlib.h>
+	<stdio.h>
+
+1507588035 c:\users\facundo\documents\tecnologo\eda\laboratorioeda_fl\texto.h
+	"Constantes.h"
+	"Palabras.h"
+	"Diccionario.h"
+
