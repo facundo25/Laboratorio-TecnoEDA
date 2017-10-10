@@ -77,9 +77,10 @@ int main()
            case 3:
                   printf("Ingrese la posicion de la linea a borrar (debe ser >= 1 y <= cant lineas): \n");
                  // fflush(stdin);
+
                   scanf("%d",&posicionLinea);
                   retorno = BorrarLinea(texto,posicionLinea);
-                  imprimirResultado(retorno);
+                  //imprimirResultado(retorno);
                   break;
            case 4:
                   printf("Esta seguro de que desea borrar todas las lineas del texto (s/n)?: \n");

@@ -7,6 +7,7 @@ Texto CrearTexto(){
   return t;
 }
 
+/*-------- Primitivas -------------*/
 
 void InsertarPrincipio(Texto &texto){
     Texto aux = new _texto;
@@ -32,11 +33,13 @@ bool TextoEsVacio(Texto texto){
 }
 int contarLineas(Texto texto){
     int count = 0;
-    while(texto=!NULL){
+    while(texto!=NULL){
         count++;
+        texto = texto->sig;
     }
     return count;
 }
+/*-------- Primitivas -------------*/
 
 TipoRetorno InsertarLinea(Texto &texto) {
     if (texto == NULL){
@@ -44,6 +47,9 @@ TipoRetorno InsertarLinea(Texto &texto) {
     }else{
         InsertarFinal(texto);
     }
+    int e = 0;
+    e = contarLineas(texto);
+    printf("%d",e);
   return OK;
 }
 
@@ -79,7 +85,31 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
 }
 
 TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
-  return NO_IMPLEMENTADA;
+    if(TextoEsVacio(texto) == true){
+        printf("Es vacio...");
+        return ERROR;
+    }else{
+        int cantidad = contarLineas(texto);
+
+        //printf("Cantidad %d", cantidad);
+
+        if((posicionLinea >= 1) && (posicionLinea <= cantidad)){
+            Texto ante = new _texto;
+            Texto nodo = texto;
+            for(int i=0; i=cantidad-1; i++){
+                ante = nodo;
+                nodo = nodo->sig;
+            }
+            ante->sig = nodo->sig;
+            delete nodo;
+            return OK;
+        }else{
+            printf("No existe la posicion... \n");
+            return ERROR;
+        }
+
+
+    }
 }
 
 TipoRetorno BorrarTodo(Texto &texto) {
