@@ -1,10 +1,13 @@
 #include "Palabras.h"
 #include <stdlib.h>
 #include <stdio.h>
-Palabras CrearPalabras() {
+
+
+Palabras CrearPalabras(){
   Palabras p = NULL;
   return p;
 }
+
 
 bool palabraEsVacia(Palabras palabra){
 

@@ -6,9 +6,9 @@
 
 //struct _palabra;
 typedef struct _palabra {
-    _palabra * sig;
+    _palabra *ptrPalabras;
     Cadena pal;
-}*Palabras;
+} * Palabras;
 
 /* PRIMITIVAS DE PALABRA */
 

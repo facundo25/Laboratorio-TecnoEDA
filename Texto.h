@@ -5,12 +5,12 @@
 #include "Palabras.h"
 #include "Diccionario.h"
 
-struct _texto;
+
 
 typedef struct _texto {
     //int info;
-    _texto * sig;
-    Palabras * p;
+    _texto * ptrTexto;
+    Palabras * ptrPalabra;
 } * Texto;
 
 void InsertarPrincipio(Texto &);

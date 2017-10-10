@@ -11,18 +11,18 @@ Texto CrearTexto(){
 
 void InsertarPrincipio(Texto &texto){
     Texto aux = new _texto;
-        aux->sig = texto;
-        texto = aux;
+    aux->ptrTexto = texto;
+    texto = aux;
 }
 
 void InsertarFinal(Texto &texto){
     Texto Final = texto;
     Texto aux = new _texto;
-    while (Final->sig !=NULL){
-        Final= Final->sig;
+    while (Final->ptrTexto !=NULL){
+        Final= Final->ptrTexto;
     }
-    aux->sig = NULL;
-    Final->sig=aux;
+    aux->ptrTexto = NULL;
+    Final->ptrTexto=aux;
 }
 
 bool TextoEsVacio(Texto texto){
@@ -35,7 +35,7 @@ int contarLineas(Texto texto){
     int count = 0;
     while(texto!=NULL){
         count++;
-        texto = texto->sig;
+        texto = texto->ptrTexto;
     }
     return count;
 }
@@ -57,7 +57,7 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
     int count = 0;
     Texto aux = texto;
     while(aux != NULL){
-        aux = aux->sig;
+        aux = aux->ptrTexto;
         count++;
     }
     if (count==0){
@@ -70,11 +70,11 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
             for (int i=1; aux!=NULL; i++){
                     if(i=posicionLinea){
                         Texto nuevo = new _texto;
-                        nuevo ->sig = aux->sig;
-                        aux->sig = nuevo;
+                        nuevo ->ptrTexto = aux->ptrTexto;
+                        aux->ptrTexto = nuevo;
                         return OK;
                     }
-                aux = aux->sig;
+                aux = aux->ptrTexto;
             }
         //printf("Coincide con el numero de lineas del texto... \n");
         return OK;
@@ -98,9 +98,9 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
             Texto nodo = texto;
             for(int i=0; i=cantidad-1; i++){
                 ante = nodo;
-                nodo = nodo->sig;
+                nodo = nodo->ptrTexto;
             }
-            ante->sig = nodo->sig;
+            ante->ptrTexto = nodo->ptrTexto;
             delete nodo;
             return OK;
         }else{
@@ -121,8 +121,40 @@ TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) 
 }
 
 TipoRetorno ImprimirTexto(Texto texto){
-    return NO_IMPLEMENTADA;
 
+    //Palabras palabra = CrearPalabras();
+    Texto aux = texto;
+
+    while(aux!=NULL){
+        while(aux->ptrPalabra !=NULL){
+
+            Palabras *p = texto->ptrPalabra;
+            Cadena c = *p->ptrPalabras->pal;
+        }
+
+
+        aux = aux->sig;
+    }
+
+    /*
+    int contador = 0;
+    if (TextoEsVacio(texto)){
+       printf("Texto vacío");
+       return ERROR;
+    } else
+        while (texto!=NULL){
+            texto = texto->sig;
+            aux= texto->p;
+            contador ++;
+            //printf("%d :\n", contador);
+            while (palabra!=NULL){
+                printf("%d", contador);
+                printf("%c", palabra->pal);
+                palabra->sig;
+            }
+        }
+*/
+return OK;
 }
 
 TipoRetorno ComprimirTexto(Texto texto) {
@@ -142,6 +174,7 @@ TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea,
   return NO_IMPLEMENTADA;
 }
 
+/*
 TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
 
     if (TextoEsVacio(texto)){
@@ -149,9 +182,14 @@ TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
        return ERROR;
     } else
         for (int i=0; i<=posicionLinea; i++){
-        printf ("%c ", texto->p);
+        //printf ("%c ", texto->p);
         texto=texto->sig;
+        while (texto!=NULL){
+
+
+        }
     }
 
-  //return NO_IMPLEMENTADA;
-    }
+return OK;
+
+} */
