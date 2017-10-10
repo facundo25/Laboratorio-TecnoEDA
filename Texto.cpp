@@ -99,18 +99,12 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
             Texto nodo = texto;
             for(int i=0; i<=posicionLinea-1; i++){
                 ante = nodo;
-<<<<<<< HEAD
-                nodo = nodo->sig;
+                nodo = nodo->ptrTexto;
                 //printf("%d\n", i);
             }
-            ante->sig = nodo->sig;
-            free(ante);
-=======
-                nodo = nodo->ptrTexto;
-            }
             ante->ptrTexto = nodo->ptrTexto;
-            delete nodo;
->>>>>>> origin/master
+            free(ante);
+                nodo = nodo->ptrTexto;
             return OK;
         }else{
             printf("No existe la posicion... \n");
