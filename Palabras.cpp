@@ -6,6 +6,14 @@ Palabras CrearPalabras() {
   return p;
 }
 
+bool palabraEsVacia(Palabras palabra){
+
+    if (palabra==NULL){
+    return true;
+    }
+return false;
+}
+
 TipoRetorno InsertarPalabra(Palabras &palabras, Posicion posicionPalabra, Cadena palabraAIngresar) {
   return NO_IMPLEMENTADA;
 }

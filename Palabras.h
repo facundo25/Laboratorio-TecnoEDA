@@ -10,6 +10,11 @@ typedef struct _palabra {
     Cadena pal;
 }*Palabras;
 
+/* PRIMITIVAS DE PALABRA */
+
+bool palabraEsVacia (Palabras palabra);
+
+
     /* Crea un conjunto de palabras vacio */
 Palabras CrearPalabras();
     /* Inserta una palabra en la posicion dada */
