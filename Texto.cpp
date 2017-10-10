@@ -91,17 +91,18 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
     }else{
         int cantidad = contarLineas(texto);
 
-        //printf("Cantidad %d", cantidad);
+        printf("Cantidad %d\n", cantidad);
 
         if((posicionLinea >= 1) && (posicionLinea <= cantidad)){
-            Texto ante = new _texto;
+            Texto ante = NULL;
             Texto nodo = texto;
-            for(int i=0; i=cantidad-1; i++){
+            for(int i=0; i<=posicionLinea-1; i++){
                 ante = nodo;
                 nodo = nodo->sig;
+                //printf("%d\n", i);
             }
             ante->sig = nodo->sig;
-            delete nodo;
+            free(ante);
             return OK;
         }else{
             printf("No existe la posicion... \n");
