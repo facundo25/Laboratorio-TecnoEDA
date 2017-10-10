@@ -6,11 +6,14 @@ Texto CrearTexto(){
   Texto t = NULL;
   return t;
 }
+
+
 void InsertarPrincipio(Texto &texto){
     Texto aux = new _texto;
         aux->sig = texto;
         texto = aux;
 }
+
 void InsertarFinal(Texto &texto){
     Texto Final = texto;
     Texto aux = new _texto;
@@ -19,6 +22,20 @@ void InsertarFinal(Texto &texto){
     }
     aux->sig = NULL;
     Final->sig=aux;
+}
+
+bool TextoEsVacio(Texto texto){
+    if (texto == NULL){
+        return true;
+    }
+    return false;
+}
+int contarLineas(Texto texto){
+    int count = 0;
+    while(texto=!NULL){
+        count++;
+    }
+    return count;
 }
 
 TipoRetorno InsertarLinea(Texto &texto) {

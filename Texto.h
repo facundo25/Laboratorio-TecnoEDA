@@ -16,6 +16,7 @@ typedef struct _texto {
 void InsertarPrincipio(Texto &);
 void InsertarFinal(Texto &);
 int contarLineas(Texto);
+bool TextoEsVacio(Texto texto);
 
     /* Crea un texto vacío */
 Texto CrearTexto();
