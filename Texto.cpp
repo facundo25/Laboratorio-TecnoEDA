@@ -120,7 +120,10 @@ TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) 
   return NO_IMPLEMENTADA;
 }
 
-TipoRetorno ImprimirTexto(Texto texto) { return NO_IMPLEMENTADA; }
+TipoRetorno ImprimirTexto(Texto texto){
+    return NO_IMPLEMENTADA;
+
+}
 
 TipoRetorno ComprimirTexto(Texto texto) {
   return NO_IMPLEMENTADA;
@@ -140,7 +143,15 @@ TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea,
 }
 
 TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
-  return NO_IMPLEMENTADA;
-}
 
+    if (TextoEsVacio(texto)){
+       printf("Texto vacío");
+       return ERROR;
+    } else
+        for (int i=0; i<=posicionLinea; i++){
+        printf ("%c ", texto->p);
+        texto=texto->sig;
+    }
 
+  //return NO_IMPLEMENTADA;
+    }
