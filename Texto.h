@@ -10,7 +10,7 @@
 typedef struct _texto {
     //int info;
     _texto * ptrTexto;
-    Palabras * ptrPalabra;
+    _palabra * ptrPalabra;
 } * Texto;
 
 void InsertarPrincipio(Texto &);

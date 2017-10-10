@@ -1,6 +1,7 @@
 #include "Texto.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 Texto CrearTexto(){
   Texto t = NULL;
@@ -128,12 +129,13 @@ TipoRetorno ImprimirTexto(Texto texto){
     while(aux!=NULL){
         while(aux->ptrPalabra !=NULL){
 
-            Palabras *p = texto->ptrPalabra;
-            Cadena c = *p->ptrPalabras->pal;
+            //Palabras p = texto->ptrPalabra;
+            Cadena c = NULL;
+            strcpy(c,aux->ptrTexto->ptrPalabra->pal);
         }
 
 
-        aux = aux->sig;
+        aux = aux->ptrTexto;
     }
 
     /*

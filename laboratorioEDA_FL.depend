@@ -45,28 +45,28 @@
 
 1507588937 c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\constantes.h
 
-1507605103 source:c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\main.cpp
+1507669901 source:c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\main.cpp
 	<cstdlib>
 	<iostream>
 	<stdio.h>
 	"Texto.h"
 	"Diccionario.h"
 
-1507596839 c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\texto.h
+1507673342 c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\texto.h
 	"Constantes.h"
 	"Palabras.h"
 	"Diccionario.h"
 
-1507594474 c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\palabras.h
+1507673342 c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\palabras.h
 	"Constantes.h"
 	"Diccionario.h"
 
-1507594482 source:c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\palabras.cpp
+1507669388 source:c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\palabras.cpp
 	"Palabras.h"
 	<stdlib.h>
 	<stdio.h>
 
-1507657866 source:c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\texto.cpp
+1507669886 source:c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\texto.cpp
 	"Texto.h"
 	<stdlib.h>
 	<stdio.h>
