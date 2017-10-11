@@ -52,7 +52,7 @@
 	"Texto.h"
 	"Diccionario.h"
 
-1507673342 c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\texto.h
+1507675216 c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\texto.h
 	"Constantes.h"
 	"Palabras.h"
 	"Diccionario.h"
@@ -61,7 +61,7 @@
 	"Constantes.h"
 	"Diccionario.h"
 
-1507669388 source:c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\palabras.cpp
+1507755871 source:c:\users\federico.bentancor\documents\github\laboratorio-tecnoeda\palabras.cpp
 	"Palabras.h"
 	<stdlib.h>
 	<stdio.h>

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "Palabras.h"
 
 Texto CrearTexto(){
   Texto t = NULL;
@@ -175,11 +176,11 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
     else {
     int cantidad = contarLineas(texto);
     //Texto aux = new texto;
-    if (posicionLinea >=1)&&(posicionLinea <= cantidad){
+    if ((posicionLinea >=1)&&(posicionLinea <= cantidad)){
             for (int i=0; i <= posicionLinea; i++){
                 texto = texto->ptrTexto;
             }
-            InsertarPalabra(Palabras texto->ptrPalabra, Posicion posicionPalabra, Cadena palabraAIngresar);
+            InsertarPalabra(texto->ptrPalabra, posicionPalabra, palabraAIngresar);
     }
     printf("Linea ingresada no válida ...\n");
     return ERROR;
