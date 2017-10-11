@@ -50,3 +50,4 @@ TipoRetorno PalabraEnPosicion(Palabras palabras, Posicion posicionPalabra, Caden
 TipoRetorno ImprimirPalabrasIncorrectas(Palabras palabras, Diccionario D) {
   return NO_IMPLEMENTADA;
 }
+

@@ -165,9 +165,26 @@ TipoRetorno ComprimirTexto(Texto texto) {
   return NO_IMPLEMENTADA;
 }
 
-TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,
-                                   Posicion posicionPalabra, Cadena palabraAIngresar) {
-  return NO_IMPLEMENTADA;
+TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion posicionPalabra, Cadena palabraAIngresar)
+{
+    if (TextoEsVacio(texto)==NULL){
+    printf("Texto vacío, ingrese una linea... \n");
+    return ERROR;
+
+}
+    else {
+    int cantidad = contarLineas(texto);
+    //Texto aux = new texto;
+    if (posicionLinea >=1)&&(posicionLinea <= cantidad){
+            for (int i=0; i <= posicionLinea; i++){
+                texto = texto->ptrTexto;
+            }
+            InsertarPalabra(Palabras texto->ptrPalabra, Posicion posicionPalabra, Cadena palabraAIngresar);
+    }
+    printf("Linea ingresada no válida ...\n");
+    return ERROR;
+    }
+return OK;
 }
 
 TipoRetorno BorrarPalabraEnLinea(Texto texto, Posicion posicionLinea, Posicion posicionPalabra) {
