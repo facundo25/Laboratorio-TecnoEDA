@@ -56,14 +56,18 @@ TipoRetorno InsertarLinea(Texto &texto) {
 }
 
 TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
-    int cant = contarLineas(texto);
+    int count = 0;
     Texto aux = texto;
-    if (cant==0){
+    while(aux != NULL){
+        aux = aux->ptrTexto;
+        count++;
+    }
+    if (count==0){
         printf("La lista es vacia.. \n");
         return ERROR;
     }
-    //printf("Numero de lineas: %d\n", cant);
-    if((posicionLinea >= 1) && (posicionLinea <= cant)){
+    printf("Numero de lineas: %d\n", count);
+    if((posicionLinea >= 1) && (posicionLinea <= count)){
             aux = texto;
             for (int i=1; aux!=NULL; i++){
                     if(i=posicionLinea){
@@ -74,18 +78,9 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
                     }
                 aux = aux->ptrTexto;
             }
-    }if(posicionLinea == cant+1){
-                InsertarFinal(texto);
-                //printf("agregar una linea al final...");
-                int e = 0;
-                e = contarLineas(texto);
-                printf("Numero de lineas: %d\n", e);
-                return OK;
-
-            }
         //printf("Coincide con el numero de lineas del texto... \n");
-
-        else{
+        return OK;
+    }else{
         printf("Mas de la cantidad de lineas, cero o menos... \n");
         return ERROR;
     }
