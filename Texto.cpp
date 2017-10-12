@@ -174,7 +174,7 @@ TipoRetorno ComprimirTexto(Texto texto) {
 
 TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion posicionPalabra, Cadena palabraAIngresar)
 {
-    if (TextoEsVacio(texto)==NULL){
+    if (TextoEsVacio(texto)==true){
     printf("Texto vacío, ingrese una linea... \n");
     return ERROR;
 
