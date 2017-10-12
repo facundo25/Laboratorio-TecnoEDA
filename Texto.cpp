@@ -74,7 +74,8 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
                     }
                 aux = aux->ptrTexto;
             }
-    }if(posicionLinea == cant+1){
+
+                }if(posicionLinea == cant+1){
                 InsertarFinal(texto);
                 //printf("agregar una linea al final...");
                 int e = 0;
@@ -100,7 +101,7 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
 
         printf("Cantidad %d\n", cantidad);
 
-        if((posicionLinea >= 1) && (posicionLinea <= cantidad)){
+        if((posicionLinea >= 1) && (posicionLinea < cantidad)){
             Texto ante = NULL;
             Texto nodo = texto;
             for(int i=0; i<=posicionLinea-1; i++){
