@@ -35,8 +35,35 @@ bool palabraEsVacia(Palabras palabra){
 return false;
 }
 
-TipoRetorno InsertarPalabra(Palabras &palabras, Posicion posicionPalabra, Cadena palabraAIngresar) {
+TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena palabraAIngresar) {
 
+int count = 0;
+    Palabras aux = palabra;
+    while(aux != NULL){
+        aux = aux->ptrPalabras;
+        count++;
+    }
+    if (count==0){
+        printf("La lista de palabras es vacia.. \n");
+        return ERROR;
+    }
+
+    if((posicionPalabra >= 1) && (posicionPalabra <= count)){
+            aux = palabra;
+            for (int i=1; aux!=NULL; i++){
+                    if(i=posicionPalabra){
+                        Palabras nueva = new _palabra;
+                        nueva ->ptrPalabras = aux->ptrPalabras;
+                        aux->ptrPalabras = nueva;
+                        return OK;
+                    }
+                aux = aux->ptrPalabras;
+            }
+                return OK;
+    }else{
+        printf("Mas de la cantidad de palabras, cero o menos... \n");
+        return ERROR;
+    }
 
   return NO_IMPLEMENTADA;
 }
