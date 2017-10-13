@@ -28,7 +28,7 @@ void InsertarFinal(Texto &texto){
 }
 
 bool TextoEsVacio(Texto texto){
-    if (texto == NULL){
+    if (texto = NULL){
         return true;
     }
     return false;
@@ -174,13 +174,20 @@ TipoRetorno ComprimirTexto(Texto texto) {
 
 TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion posicionPalabra, Cadena palabraAIngresar)
 {
-    if (TextoEsVacio(texto)==true){
-    printf("Texto vacío, ingrese una linea... \n");
-    return ERROR;
+    //if (TextoEsVacio(texto)=true){
+    //printf("Texto vacío, ingrese una linea... \n");
+    //return ERROR;
 
-}
-    else {
+//}
+    //else {
+
     int cantidad = contarLineas(texto);
+    if (cantidad == 0){
+        printf("EL TEXTO ES VACIO...");
+    return ERROR;
+    }
+
+    else {
     //Texto aux = new texto;
     if ((posicionLinea >=1)&&(posicionLinea <= cantidad)){
             for (int i=0; i <= posicionLinea; i++){
@@ -191,6 +198,7 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
     printf("Linea ingresada no válida ...\n");
     return ERROR;
     }
+
 return OK;
 }
 

@@ -111,17 +111,19 @@ int main()
            case 8:
                   printf("Ingrese la palabra que desea agregar: \n");
                   palabraAux = new char [MAX_LARGO_PALABRA];
-                  //fflush(stdin);
-                  scanf("%c",&palabraAux);
+                  fflush(stdin);
+
+                  scanf(" %c",palabraAux);
+
                   printf("Ingrese la posicion de la linea donde la va a agregar (debe ser >= 1 y <= cant lineas): \n");
-                //  fflush(stdin);
-                  scanf("%d",&posicionLinea);
+                  fflush(stdin);
+                  scanf(" %d",&posicionLinea);
                   printf("Ingrese la posicion que debe tener la palabra dentro de las palabras de la linea (debe ser >= 1 y <= cant palabaras en la linea + 1): \n");
-                //  fflush(stdin);
-                  scanf("%d",&posicionPalabra);
-                  retorno = InsertarPalabraEnLinea(texto,posicionLinea,posicionPalabra,palabraAux);
+                  fflush(stdin);
+                  scanf(" %d",&posicionPalabra);
+                  retorno = InsertarPalabraEnLinea(texto, posicionLinea, posicionPalabra, palabraAux);
                   imprimirResultado(retorno);
-                  //delete palabraAux;
+                  delete palabraAux;
                   break;
            case 9:
                   printf("Ingrese la posicion de la linea donde se encuentra la palabra a borrar (debe ser >= 1 y <= cant lineas): \n");
