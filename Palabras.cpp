@@ -65,7 +65,7 @@ int count = 0;
         return ERROR;
     }
 
-  return NO_IMPLEMENTADA;
+  return OK;
 }
 
 TipoRetorno BorrarPalabra(Palabras &palabras, Posicion posicionPalabra) {
