@@ -113,9 +113,7 @@ int main()
                   printf("Ingrese la palabra que desea agregar: \n");
                   palabraAux = new char [MAX_LARGO_PALABRA];
                   fflush(stdin);
-
-                  scanf(" %c",palabraAux);
-
+                  gets(palabraAux);
                   printf("Ingrese la posicion de la linea donde la va a agregar (debe ser >= 1 y <= cant lineas): \n");
                   fflush(stdin);
                   scanf(" %d",&posicionLinea);
@@ -150,7 +148,7 @@ int main()
                   break;
            case 11:
                   printf("Ingrese la posicion de la linea que desea imprimir (debe ser >= 1 y <= cant lineas): \n");
-                //  fflush(stdin);
+                  fflush(stdin);
                   scanf("%d",&posicionLinea);
 //                  retorno =  ImprimirLinea(texto, posicionLinea);
                   imprimirResultado(retorno);

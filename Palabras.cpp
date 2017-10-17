@@ -10,10 +10,12 @@ Palabras CrearPalabras(){
   return p;
 }
 
-void insertarPalabraPrincipio(Palabras &palabra){
+void insertarPalabraPrincipio(Palabras &palabra, Cadena cadenaPalabra){
     Palabras aux = new _palabra;
+    aux->pal = cadenaPalabra;
     aux->ptrPalabras = palabra;
     palabra = aux;
+    puts(aux->pal);
 }
 
 void insertarPalabraFinal(Palabras &palabra){
@@ -48,9 +50,12 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
         printf("CANTIDAD DE PALABRAS: %d", contar);
     }*/
 
+    printf("ENTRO A FUNCION INSERTARPALABRA");
     if (palabraEsVacia(palabra)){
-        printf("La lista de palabras es vacia.. \n");
-        return ERROR;
+        insertarPalabraPrincipio(palabra, palabraAIngresar);
+
+        printf("PALABRA INGRESADA CORRECTAMENTE.. \n");
+        return OK;
     }
 
     int contar = 8;

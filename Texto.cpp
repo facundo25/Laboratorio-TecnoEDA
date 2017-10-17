@@ -137,38 +137,45 @@ TipoRetorno ImprimirTexto(Texto texto){
 
     //Palabras palabra = CrearPalabras();
     Texto aux = texto;
-
+    int contador = 0;
     while(aux!=NULL){
-        while(aux->ptrPalabra !=NULL){
+            //printf("PRUEBA");
+            Palabras aux2 = aux->ptrPalabra;
+            contador ++;
+            printf("%d: ", contador);
+        while(aux2 !=NULL){
 
             //Palabras p = texto->ptrPalabra;
-            Cadena c = NULL;
-            strcpy(c,aux->ptrTexto->ptrPalabra->pal);
+            //Cadena c;
+            //strcpy(aux2->pal,c);
+            puts(aux2->pal);
+            aux2 = aux2->ptrPalabras;
         }
 
 
         aux = aux->ptrTexto;
     }
 
-    /*
+/*
     int contador = 0;
     if (TextoEsVacio(texto)){
        printf("Texto vacío");
        return ERROR;
     } else
         while (texto!=NULL){
-            texto = texto->sig;
-            aux= texto->p;
+            texto = texto->ptrTexto;
+            aux = texto->ptrTexto->ptrPalabra;
             contador ++;
-            //printf("%d :\n", contador);
+            printf("%d :\n", contador);
             while (palabra!=NULL){
                 printf("%d", contador);
-                printf("%c", palabra->pal);
+                printf("%c",);
                 palabra->sig;
             }
         }
-*/
+
 return OK;
+} */
 }
 
 TipoRetorno ComprimirTexto(Texto texto) {
@@ -183,8 +190,7 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
 
 //}
   //  else {
-    printf("POR ACÁ PASÉ");
-    int cantidad = contarLineas(texto);
+     int cantidad = contarLineas(texto);
     //if (cantidad == 0){
     //    printf("EL TEXTO ES VACIO...");
     //return ERROR;
@@ -196,8 +202,8 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
             for (int i=0; i <= posicionLinea; i++){
                 aux = texto->ptrTexto;
             }
-            printf("POR ACÁ TAMBIÉN PASÉ");
             InsertarPalabra(texto->ptrPalabra, posicionPalabra, palabraAIngresar);
+        return OK;
     }
     printf("Linea ingresada no válida ...\n");
     return ERROR;
@@ -215,22 +221,21 @@ TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea,
   return NO_IMPLEMENTADA;
 }
 
-/*
-TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
 
-    if (TextoEsVacio(texto)){
+/*TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
+
+    if (texto==NULL){
        printf("Texto vacío");
        return ERROR;
     } else
         for (int i=0; i<=posicionLinea; i++){
-        //printf ("%c ", texto->p);
-        texto=texto->sig;
-        while (texto!=NULL){
-
-
-        }
+        printf("PRUEBA");
+        texto=texto->ptrTexto;
+        printf ("%c ", texto->ptrPalabra->pal);
+        texto=texto->ptrTexto;
     }
 
 return OK;
 
-} */
+}
+*/
