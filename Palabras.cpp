@@ -37,18 +37,25 @@ return false;
 
 TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena palabraAIngresar) {
 
-int count = 0;
+
     Palabras aux = palabra;
-    while(aux != NULL){
-        aux = aux->ptrPalabras;
-        count++;
-    }
-    if (count==0){
+    /*int contar = 0;
+
+    while(palabra != NULL){
+        printf("\n ENTRE AL WHILE DE SI LA PALABRA ES VACIA");
+        palabra = palabra->ptrPalabras;
+        //contar++ ;
+        printf("CANTIDAD DE PALABRAS: %d", contar);
+    }*/
+
+    if (palabraEsVacia(palabra)){
         printf("La lista de palabras es vacia.. \n");
         return ERROR;
     }
 
-    if((posicionPalabra >= 1) && (posicionPalabra <= count)){
+    int contar = 8;
+
+    if((posicionPalabra >= 1) && (posicionPalabra <= contar)){
             aux = palabra;
             for (int i=1; aux!=NULL; i++){
                     if(i=posicionPalabra){

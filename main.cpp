@@ -51,6 +51,7 @@ int main()
 
     Texto texto = CrearTexto();
     Diccionario D = CrearDiccionario();
+    Palabras palabra = CrearPalabras();
     int numOper = 0;
     bool salir = false;
     TipoRetorno retorno = NO_IMPLEMENTADA;
