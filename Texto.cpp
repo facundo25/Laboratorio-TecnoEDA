@@ -15,6 +15,7 @@ void InsertarPrincipio(Texto &texto){
     Texto aux = new _texto;
     aux->ptrTexto = texto;
     texto = aux;
+    aux->ptrPalabra = NULL;
 }
 
 void InsertarFinal(Texto &texto){
@@ -25,6 +26,7 @@ void InsertarFinal(Texto &texto){
     }
     aux->ptrTexto = NULL;
     Final->ptrTexto=aux;
+    aux->ptrPalabra = NULL;
 }
 
 bool TextoEsVacio(Texto texto){
@@ -70,6 +72,7 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
                         Texto nuevo = new _texto;
                         nuevo ->ptrTexto = aux->ptrTexto;
                         aux->ptrTexto = nuevo;
+                        nuevo->ptrPalabra =NULL;
                         return OK;
                     }
                 aux = aux->ptrTexto;
