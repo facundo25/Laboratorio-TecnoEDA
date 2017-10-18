@@ -1,7 +1,8 @@
 #include "Palabras.h"
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <iostream>
+using namespace std;
 
 /* ---- FUNCIONES PRIMITIVAS --- */
 
@@ -55,6 +56,7 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
         insertarPalabraPrincipio(palabra, palabraAIngresar);
 
         printf("PALABRA INGRESADA CORRECTAMENTE.. \n");
+        ImprimirPalabras(palabra);
         return OK;
     }
 
@@ -93,8 +95,15 @@ void BorrarTodoPalabras(Palabras &palabras) {
 }
 
 void ImprimirPalabras(Palabras palabras) {
+    while (palabras !=NULL){
+                puts(palabras->pal);
+                //printf("%s", palabras->pal);
+                //cout << palabras->pal;
+            palabras = palabras->ptrPalabras;
+            }
 
-}
+        }
+
 
 unsigned int CantidadPalabras(Palabras palabras) {
   return 0;

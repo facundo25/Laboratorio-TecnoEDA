@@ -136,24 +136,19 @@ TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) 
 TipoRetorno ImprimirTexto(Texto texto){
 
     //Palabras palabra = CrearPalabras();
-    Texto aux = texto;
+    //Texto aux = texto;
     int contador = 0;
-    while(aux!=NULL){
+    while(texto!=NULL){
             //printf("PRUEBA");
-            Palabras aux2 = aux->ptrPalabra;
+
             contador ++;
             printf("%d: ", contador);
-        while(aux2 !=NULL){
-
-            //Palabras p = texto->ptrPalabra;
-            //Cadena c;
-            //strcpy(aux2->pal,c);
-            puts(aux2->pal);
-            aux2 = aux2->ptrPalabras;
-        }
+            //Palabras aux2 = aux->ptrPalabra;
+            ImprimirPalabras(texto->ptrPalabra);
 
 
-        aux = aux->ptrTexto;
+        texto = texto->ptrTexto;
+        printf("\n");
     }
 
 /*

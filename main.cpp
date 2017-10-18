@@ -122,7 +122,7 @@ int main()
                   scanf(" %d",&posicionPalabra);
                   retorno = InsertarPalabraEnLinea(texto, posicionLinea, posicionPalabra, palabraAux);
                   imprimirResultado(retorno);
-                  delete palabraAux;
+                  //delete palabraAux;
                   break;
            case 9:
                   printf("Ingrese la posicion de la linea donde se encuentra la palabra a borrar (debe ser >= 1 y <= cant lineas): \n");
@@ -160,7 +160,7 @@ int main()
                   scanf("%c",&palabraAux);
                   retorno = IngresarPalabraDiccionario(D,palabraAux);
                   imprimirResultado(retorno);
-                  delete palabraAux;
+                  // delete palabraAux;
                   break;
            case 13:
                   printf("Ingrese la palabra que desea borrar del diccionario: \n");
