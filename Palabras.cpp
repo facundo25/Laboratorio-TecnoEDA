@@ -92,11 +92,14 @@ void BorrarTodoPalabras(Palabras &palabras) {
 }
 
 void ImprimirPalabras(Palabras palabras) {
+    if(palabras == NULL){
+        printf("\n");
+    }else{
     while (palabras !=NULL){
                 puts(palabras->pal);
                 palabras = palabras->ptrPalabras;
             }
-
+    }
         }
 
 

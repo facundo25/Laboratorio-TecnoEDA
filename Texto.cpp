@@ -145,7 +145,7 @@ TipoRetorno ImprimirTexto(Texto texto){
             //Palabras aux2 = aux->ptrPalabra;
             ImprimirPalabras(texto->ptrPalabra);
             texto = texto->ptrTexto;
-            printf("\n");
+
     }
 
 
