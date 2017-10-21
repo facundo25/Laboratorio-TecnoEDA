@@ -102,7 +102,7 @@ int main()
                   delete palabraAux;
                   break;
            case 6:
-                  retorno =  ImprimirTexto(texto);
+                  retorno = ImprimirTexto(texto);
                   imprimirResultado(retorno);
                   break;
            case 7:

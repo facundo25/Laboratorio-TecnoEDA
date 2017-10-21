@@ -140,7 +140,6 @@ TipoRetorno ImprimirTexto(Texto texto){
     int contador = 0;
     while(texto!=NULL){
             //printf("PRUEBA");
-
             contador ++;
             printf("%d: ", contador);
             //Palabras aux2 = aux->ptrPalabra;
@@ -161,7 +160,7 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
     int cantidad = contarLineas(texto);
     //Texto aux = new _texto;
     if ((posicionLinea >=1)&&(posicionLinea <= cantidad)){
-            for (int i=0; i <= posicionLinea; i++){
+            for (int i=1; i < posicionLinea; i++){
                 texto = texto->ptrTexto;
             }
             InsertarPalabra(texto->ptrPalabra, posicionPalabra, palabraAIngresar);
