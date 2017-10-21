@@ -149,26 +149,7 @@ TipoRetorno ImprimirTexto(Texto texto){
             printf("\n");
     }
 
-/*
-    int contador = 0;
-    if (TextoEsVacio(texto)){
-       printf("Texto vacío");
-       return ERROR;
-    } else
-        while (texto!=NULL){
-            texto = texto->ptrTexto;
-            aux = texto->ptrTexto->ptrPalabra;
-            contador ++;
-            printf("%d :\n", contador);
-            while (palabra!=NULL){
-                printf("%d", contador);
-                printf("%c",);
-                palabra->sig;
-            }
-        }
 
-return OK;
-} */
 }
 
 TipoRetorno ComprimirTexto(Texto texto) {
@@ -177,31 +158,17 @@ TipoRetorno ComprimirTexto(Texto texto) {
 
 TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion posicionPalabra, Cadena palabraAIngresar)
 {
-    //if (texto==NULL){
-    //printf("Texto vacío, ingrese una linea... \n");
-    //return ERROR;
-
-//}
-  //  else {
-     int cantidad = contarLineas(texto);
-    //if (cantidad == 0){
-    //    printf("EL TEXTO ES VACIO...");
-    //return ERROR;
-    //}
-
-    //else {
-    Texto aux = new _texto;
+    int cantidad = contarLineas(texto);
+    //Texto aux = new _texto;
     if ((posicionLinea >=1)&&(posicionLinea <= cantidad)){
             for (int i=0; i <= posicionLinea; i++){
-                aux = texto->ptrTexto;
+                texto = texto->ptrTexto;
             }
             InsertarPalabra(texto->ptrPalabra, posicionPalabra, palabraAIngresar);
         return OK;
     }
     printf("Linea ingresada no válida ...\n");
     return ERROR;
-
-//return OK;
 
 }
 
