@@ -145,10 +145,8 @@ TipoRetorno ImprimirTexto(Texto texto){
             printf("%d: ", contador);
             //Palabras aux2 = aux->ptrPalabra;
             ImprimirPalabras(texto->ptrPalabra);
-
-
-        texto = texto->ptrTexto;
-        printf("\n");
+            texto = texto->ptrTexto;
+            printf("\n");
     }
 
 /*
@@ -205,7 +203,7 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
 
 //return OK;
 
-    }
+}
 
 
 TipoRetorno BorrarPalabraEnLinea(Texto texto, Posicion posicionLinea, Posicion posicionPalabra) {

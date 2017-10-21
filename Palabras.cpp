@@ -42,30 +42,27 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
 
 
     Palabras aux = palabra;
-    /*int contar = 0;
+    int contar = 0;
 
     while(palabra != NULL){
         printf("\n ENTRE AL WHILE DE SI LA PALABRA ES VACIA");
         palabra = palabra->ptrPalabras;
-        //contar++ ;
+        contar++ ;
         printf("CANTIDAD DE PALABRAS: %d", contar);
-    }*/
+    }
 
-    printf("ENTRO A FUNCION INSERTARPALABRA");
-    if (palabraEsVacia(palabra)){
+    if (palabra==NULL){
         insertarPalabraPrincipio(palabra, palabraAIngresar);
 
         printf("PALABRA INGRESADA CORRECTAMENTE.. \n");
         ImprimirPalabras(palabra);
         return OK;
-    }
-
-    int contar = 8;
+    } else{
 
     if((posicionPalabra >= 1) && (posicionPalabra <= contar)){
             aux = palabra;
-            for (int i=1; aux!=NULL; i++){
-                    if(i=posicionPalabra){
+            for (int i=0; aux!=NULL; i++){
+                    while(i=posicionPalabra){
                         Palabras nueva = new _palabra;
                         nueva ->ptrPalabras = aux->ptrPalabras;
                         aux->ptrPalabras = nueva;
@@ -78,10 +75,10 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
         printf("Mas de la cantidad de palabras, cero o menos... \n");
         return ERROR;
     }
-
   return OK;
 }
 
+}
 TipoRetorno BorrarPalabra(Palabras &palabras, Posicion posicionPalabra) {
   return NO_IMPLEMENTADA;
 }
@@ -97,9 +94,7 @@ void BorrarTodoPalabras(Palabras &palabras) {
 void ImprimirPalabras(Palabras palabras) {
     while (palabras !=NULL){
                 puts(palabras->pal);
-                //printf("%s", palabras->pal);
-                //cout << palabras->pal;
-            palabras = palabras->ptrPalabras;
+                palabras = palabras->ptrPalabras;
             }
 
         }
