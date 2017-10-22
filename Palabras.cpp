@@ -62,6 +62,7 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
     if((posicionPalabra >= 1) && (posicionPalabra <= contar)){
             //printf("\n%d:%d\n",posicionPalabra, contar);
             aux = palabra;
+            int cont = 1;
             while(palabra != NULL){
                     if(cont=posicionPalabra){
                         printf("\n%d:%d:%d\n ", posicionPalabra, contar, cont);
