@@ -44,38 +44,40 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
     Palabras aux = palabra;
     int contar = 0;
 
-    while(palabra != NULL){
+    while(aux != NULL){
         printf("\n ENTRE AL WHILE DE SI LA PALABRA ES VACIA");
-        palabra = palabra->ptrPalabras;
+        aux = aux->ptrPalabras;
         contar++ ;
         printf("CANTIDAD DE PALABRAS: %d", contar);
     }
 
-    if (palabra==NULL){
+    if (contar==0){
         insertarPalabraPrincipio(palabra, palabraAIngresar);
 
-        printf("PALABRA INGRESADA CORRECTAMENTE.. \n");
+        printf("PALABRA INGRESADA CORRECTAMENTE al principio.. \n");
         ImprimirPalabras(palabra);
         return OK;
-    } else{
+    }else{
 
     if((posicionPalabra >= 1) && (posicionPalabra <= contar)){
+            //printf("\n%d:%d\n",posicionPalabra, contar);
             aux = palabra;
-            for (int i=0; aux!=NULL; i++){
-                    while(i=posicionPalabra){
+            while(palabra != NULL){
+                    if(cont=posicionPalabra){
+                        printf("\n%d:%d:%d\n ", posicionPalabra, contar, cont);
                         Palabras nueva = new _palabra;
-                        nueva ->ptrPalabras = aux->ptrPalabras;
+                        nueva->pal = palabraAIngresar;
+                        nueva->ptrPalabras = aux->ptrPalabras;
                         aux->ptrPalabras = nueva;
                         return OK;
                     }
                 aux = aux->ptrPalabras;
+                cont++;
             }
-                return OK;
     }else{
         printf("Mas de la cantidad de palabras, cero o menos... \n");
         return ERROR;
     }
-  return OK;
 }
 
 }
@@ -95,12 +97,12 @@ void ImprimirPalabras(Palabras palabras) {
     if(palabras == NULL){
         printf("\n");
     }else{
-    while (palabras !=NULL){
+    while (palabras != NULL){
                 puts(palabras->pal);
                 palabras = palabras->ptrPalabras;
             }
     }
-        }
+}
 
 
 unsigned int CantidadPalabras(Palabras palabras) {
