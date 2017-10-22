@@ -99,7 +99,7 @@ void ImprimirPalabras(Palabras palabras) {
         printf("\n");
     }else{
     while (palabras != NULL){
-                puts(palabras->pal);
+                printf("%s ", palabras->pal);
                 palabras = palabras->ptrPalabras;
             }
     }
