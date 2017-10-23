@@ -19,9 +19,10 @@ void insertarPalabraPrincipio(Palabras &palabra, Cadena cadenaPalabra){
     puts(aux->pal);
 }
 
-void insertarPalabraFinal(Palabras &palabra){
+void insertarPalabraFinal(Palabras &palabra, Cadena cadenaPalabra){
     Palabras Final = palabra;
     Palabras aux = new _palabra;
+    aux->pal = cadenaPalabra;
     while (Final->ptrPalabras !=NULL){
         Final= Final->ptrPalabras;
     }
@@ -45,43 +46,47 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
     int contar = 0;
 
     while(aux != NULL){
-        printf("\n ENTRE AL WHILE DE SI LA PALABRA ES VACIA");
+        printf("\n ENTRE AL WHILE DE SI LA PALABRA ES VACIA \n");
         aux = aux->ptrPalabras;
         contar++ ;
-        printf("CANTIDAD DE PALABRAS: %d", contar);
+        printf("CANTIDAD DE PALABRAS: %d\n", contar);
     }
 
     if (contar==0){
         insertarPalabraPrincipio(palabra, palabraAIngresar);
 
-        printf("PALABRA INGRESADA CORRECTAMENTE al principio.. \n");
+        printf("PALABRA INGRESADA CORRECTAMENTE al principio era vacio.. \n");
         ImprimirPalabras(palabra);
         return OK;
-    }else{
-
-    if((posicionPalabra >= 1) && (posicionPalabra <= contar)){
-            //printf("\n%d:%d\n",posicionPalabra, contar);
-            aux = palabra;
+    }if(posicionPalabra==1){
+        insertarPalabraPrincipio(palabra, palabraAIngresar);
+        printf("PALABRA INGRESADA CORRECTAMENTE al principio.. \n");
+        return OK;
+    }if((posicionPalabra > 1) && (posicionPalabra <= contar)){
+            Palabras aux1 = palabra;
             int cont = 1;
-            while(palabra != NULL){
-                    if(cont=posicionPalabra){
+            while(aux1 != NULL){
+                    printf("\n%d:%d\n",posicionPalabra, contar);
+                    if(cont+1 == posicionPalabra){
                         printf("\n%d:%d:%d\n ", posicionPalabra, contar, cont);
                         Palabras nueva = new _palabra;
                         nueva->pal = palabraAIngresar;
-                        nueva->ptrPalabras = aux->ptrPalabras;
-                        aux->ptrPalabras = nueva;
+                        nueva->ptrPalabras = aux1->ptrPalabras;
+                        aux1->ptrPalabras = nueva;
                         return OK;
                     }
-                aux = aux->ptrPalabras;
+                aux1 = aux1->ptrPalabras;
                 cont++;
-            }
-    }else{
+            }}if(posicionPalabra == contar+1){
+                insertarPalabraFinal(palabra, palabraAIngresar);
+            }else{
         printf("Mas de la cantidad de palabras, cero o menos... \n");
         return ERROR;
     }
 }
 
-}
+
+
 TipoRetorno BorrarPalabra(Palabras &palabras, Posicion posicionPalabra) {
   return NO_IMPLEMENTADA;
 }
