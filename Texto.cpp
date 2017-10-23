@@ -174,11 +174,37 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
 
 
 TipoRetorno BorrarPalabraEnLinea(Texto texto, Posicion posicionLinea, Posicion posicionPalabra) {
-  return NO_IMPLEMENTADA;
-}
+    int cantidad = contarLineas(texto);
+    if ((posicionLinea >=1)&&(posicionLinea <= cantidad)){
+            for (int i=1; i < posicionLinea; i++){
+                texto = texto->ptrTexto;
+            }
+            BorrarPalabra(texto->ptrPalabra, posicionPalabra);
+        return OK;
+    }
+    printf("Linea ingresada no válida ...\n");
+    return ERROR;
+ }
 
 TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea, Cadena palabraABorrar) {
-  return NO_IMPLEMENTADA;
+
+}
+
+TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
+
+    int contador = 1;
+    while(texto!=NULL){
+            //texto = texto->ptrTexto;
+            if (contador = posicionLinea){
+            printf("%d: ", contador);
+            ImprimirPalabras(texto->ptrPalabra);
+            }
+        texto = texto->ptrTexto;
+        contador ++;
+    }
+
+return OK;
+
 }
 
 

@@ -88,8 +88,18 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
 
 
 TipoRetorno BorrarPalabra(Palabras &palabras, Posicion posicionPalabra) {
-  return NO_IMPLEMENTADA;
-}
+    //if((posicionPalabra >= 1) && (posicionPalabra < cantidad)){
+            Palabras ante = NULL;
+            Palabras nodo = palabras;
+            for(int i=0; i<=posicionPalabra-1; i++){
+                ante = nodo;
+                nodo = nodo->ptrPalabras;
+            }
+            ante->ptrPalabras = nodo->ptrPalabras;
+            free(ante);
+                nodo = nodo->ptrPalabras;
+            return OK;
+  }
 
 TipoRetorno BorrarOcurrenciasPalabra(Palabras &palabras, Cadena palabraABorrar) {
   return NO_IMPLEMENTADA;

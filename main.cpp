@@ -150,7 +150,7 @@ int main()
                   printf("Ingrese la posicion de la linea que desea imprimir (debe ser >= 1 y <= cant lineas): \n");
                   fflush(stdin);
                   scanf("%d",&posicionLinea);
-//                  retorno =  ImprimirLinea(texto, posicionLinea);
+                  retorno =  ImprimirLinea(texto, posicionLinea);
                   imprimirResultado(retorno);
                   break;
            case 12:
