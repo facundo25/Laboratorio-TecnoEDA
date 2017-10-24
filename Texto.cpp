@@ -64,17 +64,12 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
         printf("La lista es vacia.. \n");
         return ERROR;
     }
-<<<<<<< HEAD
     if(posicionLinea == 1){
         InsertarPrincipio(texto);
         return OK;
     }
     //printf("Numero de lineas: %d\n", cant);
     if((posicionLinea > 1) && (posicionLinea <= cant)){
-=======
-
-    if((posicionLinea >= 1) && (posicionLinea <= cant)){
->>>>>>> origin/master
             aux = texto;
             int cont =1;
            while(aux != NULL){
