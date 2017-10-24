@@ -151,12 +151,7 @@ TipoRetorno ImprimirTexto(Texto texto){
 
     }
 
-<<<<<<< HEAD
-
-
-=======
 return OK;
->>>>>>> origin/master
 }
 
 TipoRetorno ComprimirTexto(Texto texto) {
