@@ -195,9 +195,9 @@ TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
     int contador1 = 0;
     while(texto!=NULL){
             contador1 ++;
-            if (posicionLinea = contador1){
+            if (posicionLinea == contador1){
             printf("%d: ", contador1);
-            ImprimirPalabras(texto->ptrPalabra);
+
             }
 
         texto = texto->ptrTexto;
