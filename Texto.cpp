@@ -64,11 +64,16 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
         printf("La lista es vacia.. \n");
         return ERROR;
     }
+    if(posicionLinea == 1){
+        InsertarPrincipio(texto);
+        return OK;
+    }
     //printf("Numero de lineas: %d\n", cant);
-    if((posicionLinea >= 1) && (posicionLinea <= cant)){
+    if((posicionLinea > 1) && (posicionLinea <= cant)){
             aux = texto;
-            for (int i=1; aux!=NULL; i++){
-                    if(i=posicionLinea){
+            int cont =1;
+           while(aux != NULL){
+                    if(cont+1==posicionLinea){
                         Texto nuevo = new _texto;
                         nuevo ->ptrTexto = aux->ptrTexto;
                         aux->ptrTexto = nuevo;
@@ -76,6 +81,7 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
                         return OK;
                     }
                 aux = aux->ptrTexto;
+                cont++;
             }
 
                 }if(posicionLinea == cant+1){
@@ -144,6 +150,7 @@ TipoRetorno ImprimirTexto(Texto texto){
             printf("\n");
 
     }
+
 
 
 }
