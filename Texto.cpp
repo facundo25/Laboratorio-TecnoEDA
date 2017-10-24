@@ -101,9 +101,7 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
         printf("Es vacio...");
         return ERROR;
     }else{
-    //printf("Cantidad %d\n", cantidad);
-
-        if((posicionLinea >= 1) && (posicionLinea <= cantidad)){
+            if((posicionLinea >= 1) && (posicionLinea <= cantidad)){
             Texto ante = NULL;
             Texto nodo = texto;
             for(int i=1; i<posicionLinea; i++){
@@ -137,14 +135,10 @@ TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) 
 
 TipoRetorno ImprimirTexto(Texto texto){
 
-    //Palabras palabra = CrearPalabras();
-    //Texto aux = texto;
     int contador = 0;
     while(texto!=NULL){
-            //printf("PRUEBA");
             contador ++;
             printf("%d: ", contador);
-            //Palabras aux2 = aux->ptrPalabra;
             ImprimirPalabras(texto->ptrPalabra);
             texto = texto->ptrTexto;
             printf("\n");
@@ -161,7 +155,6 @@ TipoRetorno ComprimirTexto(Texto texto) {
 TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion posicionPalabra, Cadena palabraAIngresar)
 {
     int cantidad = contarLineas(texto);
-    //Texto aux = new _texto;
     if ((posicionLinea >=1)&&(posicionLinea <= cantidad)){
             for (int i=1; i < posicionLinea; i++){
                 texto = texto->ptrTexto;
@@ -208,23 +201,3 @@ TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
 return OK;
 
 }
-
-
-
-/*TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
-
-    if (texto==NULL){
-       printf("Texto vacío");
-       return ERROR;
-    } else
-        for (int i=0; i<=posicionLinea; i++){
-        printf("PRUEBA");
-        texto=texto->ptrTexto;
-        printf ("%c ", texto->ptrPalabra->pal);
-        texto=texto->ptrTexto;
-    }
-
-return OK;
-
-}
-*/
