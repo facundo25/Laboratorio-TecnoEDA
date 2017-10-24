@@ -96,27 +96,29 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
 }
 
 TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
-    if(TextoEsVacio(texto) == true){
+    int cantidad = contarLineas(texto);
+    if(cantidad == 0){
         printf("Es vacio...");
         return ERROR;
     }else{
-        int cantidad = contarLineas(texto);
+    //printf("Cantidad %d\n", cantidad);
 
-        printf("Cantidad %d\n", cantidad);
-
-        if((posicionLinea >= 1) && (posicionLinea < cantidad)){
+        if((posicionLinea >= 1) && (posicionLinea <= cantidad)){
             Texto ante = NULL;
             Texto nodo = texto;
-            for(int i=0; i<=posicionLinea-1; i++){
+            for(int i=1; i<posicionLinea; i++){
                 ante = nodo;
                 nodo = nodo->ptrTexto;
                 //printf("%d\n", i);
-            }
+            }if(ante == NULL){
+                texto = texto->ptrTexto;
+                free(ante);
+            }else{
             ante->ptrTexto = nodo->ptrTexto;
             free(ante);
                 nodo = nodo->ptrTexto;
             return OK;
-        }else{
+        }}else{
             printf("No existe la posicion... \n");
             return ERROR;
         }
