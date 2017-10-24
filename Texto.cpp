@@ -197,7 +197,6 @@ TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
             contador1 ++;
             if (posicionLinea == contador1){
             printf("%d: ", contador1);
-
             }
 
         texto = texto->ptrTexto;
