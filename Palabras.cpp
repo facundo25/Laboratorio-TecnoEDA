@@ -55,10 +55,15 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
     int contar = 0;
 
     while(aux != NULL){
-        printf("\n ENTRE AL WHILE DE SI LA PALABRA ES VACIA \n");
+
         aux = aux->ptrPalabras;
         contar++ ;
-        printf("CANTIDAD DE PALABRAS: %d\n", contar);
+        }
+
+    if (contar >= MAX_CANT_PALABRAS_X_LINEA){
+        printf(" ERROR: La linea llegó el límite de palabras permitido... \n");
+
+        return ERROR;
     }
 
     if (contar==0){

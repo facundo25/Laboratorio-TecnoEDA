@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "Texto.h"
 #include "Diccionario.h"
+#include <string.h>
 
 
 void menu(){
@@ -110,10 +111,17 @@ int main()
                   imprimirResultado(retorno);
                   break;
            case 8:
+
                   printf("Ingrese la palabra que desea agregar: \n");
                   palabraAux = new char [MAX_LARGO_PALABRA];
                   fflush(stdin);
                   gets(palabraAux);
+                  while ((strlen(palabraAux) > MAX_LARGO_PALABRA) || (strlen(palabraAux) < 1)) {
+                    printf("La palabra debe ser menor a 15 caracteres y mayor a 0 \n");
+                    printf("Ingrese la palabra que desea agregar: \n");
+                    fflush(stdin);
+                    gets(palabraAux);
+                  }
                   printf("Ingrese la posicion de la linea donde la va a agregar (debe ser >= 1 y <= cant lineas): \n");
                   fflush(stdin);
                   scanf(" %d",&posicionLinea);

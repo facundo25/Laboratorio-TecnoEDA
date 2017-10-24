@@ -64,12 +64,17 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
         printf("La lista es vacia.. \n");
         return ERROR;
     }
+<<<<<<< HEAD
     if(posicionLinea == 1){
         InsertarPrincipio(texto);
         return OK;
     }
     //printf("Numero de lineas: %d\n", cant);
     if((posicionLinea > 1) && (posicionLinea <= cant)){
+=======
+
+    if((posicionLinea >= 1) && (posicionLinea <= cant)){
+>>>>>>> origin/master
             aux = texto;
             int cont =1;
            while(aux != NULL){
@@ -86,14 +91,14 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
 
                 }if(posicionLinea == cant+1){
                 InsertarFinal(texto);
-                //printf("agregar una linea al final...");
+
                 int e = 0;
                 e = contarLineas(texto);
                 printf("Numero de lineas: %d\n", e);
                 return OK;
 
             }
-        //printf("Coincide con el numero de lineas del texto... \n");
+
 
         else{
         printf("Mas de la cantidad de lineas, cero o menos... \n");
@@ -113,7 +118,7 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
             for(int i=1; i<posicionLinea; i++){
                 ante = nodo;
                 nodo = nodo->ptrTexto;
-                //printf("%d\n", i);
+
             }if(ante == NULL){
                 texto = texto->ptrTexto;
                 free(ante);
@@ -151,8 +156,12 @@ TipoRetorno ImprimirTexto(Texto texto){
 
     }
 
+<<<<<<< HEAD
 
 
+=======
+return OK;
+>>>>>>> origin/master
 }
 
 TipoRetorno ComprimirTexto(Texto texto) {
@@ -167,7 +176,7 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
                 texto = texto->ptrTexto;
             }
             InsertarPalabra(texto->ptrPalabra, posicionPalabra, palabraAIngresar);
-        return OK;
+
     }
     printf("Linea ingresada no válida ...\n");
     return ERROR;
@@ -199,6 +208,8 @@ TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
             contador1 ++;
             if (posicionLinea == contador1){
             printf("%d: ", contador1);
+            ImprimirPalabras(texto->ptrPalabra);
+            printf("\n");
             }
 
         texto = texto->ptrTexto;
