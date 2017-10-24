@@ -126,10 +126,10 @@ int main()
                   break;
            case 9:
                   printf("Ingrese la posicion de la linea donde se encuentra la palabra a borrar (debe ser >= 1 y <= cant lineas): \n");
-                //  fflush(stdin);
+                  fflush(stdin);
                   scanf("%d",&posicionLinea);
                   printf("Ingrese la posicion de la palabra a borrar (debe ser >= 1 y <= cant palabaras en la linea): \n");
-                 // fflush(stdin);
+                  fflush(stdin);
                   scanf("%d",&posicionPalabra);
                   retorno = BorrarPalabraEnLinea(texto,posicionLinea,posicionPalabra);
                   imprimirResultado(retorno);
@@ -148,7 +148,8 @@ int main()
                   break;
            case 11:
                   printf("Ingrese la posicion de la linea que desea imprimir (debe ser >= 1 y <= cant lineas): \n");
-                  fflush(stdin);
+                  //fflush(stdin);
+                  posicionLinea = 0;
                   scanf("%d",&posicionLinea);
                   retorno =  ImprimirLinea(texto, posicionLinea);
                   imprimirResultado(retorno);

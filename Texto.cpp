@@ -192,20 +192,22 @@ TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea,
 
 TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
 
-    int contador = 1;
+    int contador1 = 0;
     while(texto!=NULL){
-            //texto = texto->ptrTexto;
-            if (contador = posicionLinea){
-            printf("%d: ", contador);
+            contador1 ++;
+            if (posicionLinea = contador1){
+            printf("%d: ", contador1);
             ImprimirPalabras(texto->ptrPalabra);
             }
+
         texto = texto->ptrTexto;
-        contador ++;
+
     }
 
 return OK;
 
 }
+
 
 
 /*TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
