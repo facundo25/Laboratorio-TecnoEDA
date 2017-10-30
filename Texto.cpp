@@ -132,7 +132,10 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
 }
 
 TipoRetorno BorrarTodo(Texto &texto) {
-  return NO_IMPLEMENTADA;
+    printf("Borrar TODO /n");
+    delete texto;
+    texto = NULL;
+  return OK;
 }
 
 TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) {

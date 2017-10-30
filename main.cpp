@@ -86,7 +86,7 @@ int main()
                   break;
            case 4:
                   printf("Esta seguro de que desea borrar todas las lineas del texto (s/n)?: \n");
-                 // fflush(stdin);
+                fflush(stdin);
                   scanf("%c",&opcion);
                   if (opcion == 's' || opcion == 'S'){
                      retorno = BorrarTodo(texto);
