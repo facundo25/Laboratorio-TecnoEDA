@@ -4,7 +4,6 @@
 #include "Constantes.h"
 #include "Diccionario.h"
 
-//struct _palabra;
 typedef struct _palabra {
     _palabra *ptrPalabras;
     Cadena pal;

@@ -85,9 +85,9 @@ int main()
                   //imprimirResultado(retorno);
                   break;
            case 4:
-                  printf("Esta seguro de que desea borrar todas las lineas del texto (s/n)?: \n");
+                printf("Esta seguro de que desea borrar todas las lineas del texto (s/n)?: \n");
                 fflush(stdin);
-                  scanf("%c",&opcion);
+                scanf("%c",&opcion);
                   if (opcion == 's' || opcion == 'S'){
                      retorno = BorrarTodo(texto);
                      imprimirResultado(retorno);
@@ -165,8 +165,8 @@ int main()
            case 12:
                   printf("Ingrese la palabra que desea agregar al diccionario: \n");
                   palabraAux = new char [MAX_LARGO_PALABRA];
-                 // fflush(stdin);
-                  scanf("%c",&palabraAux);
+                  fflush(stdin);
+                gets(palabraAux);
                   retorno = IngresarPalabraDiccionario(D,palabraAux);
                   imprimirResultado(retorno);
                   // delete palabraAux;

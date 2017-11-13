@@ -1,10 +1,13 @@
 #ifndef DICCIONARIO_H_INCLUDED
 #define DICCIONARIO_H_INCLUDED
-
+#include <string.h>
 #include "Constantes.h"
 
-struct _diccionario;
-typedef struct _diccionario *Diccionario;
+typedef struct _diccionario {
+    Cadena pald;
+    _diccionario *izq;
+    _diccionario *der;
+}*Diccionario;
 
     /* Agrega una palabra al diccionario */
 Diccionario CrearDiccionario();

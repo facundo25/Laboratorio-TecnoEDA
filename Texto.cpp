@@ -133,7 +133,6 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
 
 TipoRetorno BorrarTodo(Texto &texto) {
     printf("Borrar TODO /n");
-    delete texto;
     texto = NULL;
   return OK;
 }
