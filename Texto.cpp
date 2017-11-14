@@ -137,8 +137,30 @@ TipoRetorno BorrarTodo(Texto &texto) {
   return OK;
 }
 
+
+TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea, Cadena palabraABorrar) {
+
+}
+
+
 TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) {
-  return NO_IMPLEMENTADA;
+
+  int contadorLinea = 0;
+  while (texto != NULL){
+        contadorLinea ++;
+        printf("entro aca");
+        int contadorPalabra = 0;
+        while ( texto->ptrPalabra != NULL){
+            printf("aca tambien entro");
+            contadorPalabra ++;
+            if (strcmp(palabraABorrar, texto->ptrPalabra->pal) == 0){
+                    BorrarPalabra(texto->ptrPalabra, contadorPalabra);
+                    return OK;
+                }
+        }
+
+  }
+
 }
 
 TipoRetorno ImprimirTexto(Texto texto){
@@ -189,9 +211,6 @@ TipoRetorno BorrarPalabraEnLinea(Texto texto, Posicion posicionLinea, Posicion p
     return ERROR;
  }
 
-TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea, Cadena palabraABorrar) {
-
-}
 
 TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
 

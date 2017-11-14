@@ -96,11 +96,13 @@ int main()
            case 5:
                   printf("Ingrese la palabra que desea borrar: \n");
                   palabraAux = new char [MAX_LARGO_PALABRA];
-                 // fflush(stdin);
-                  scanf("%c",&palabraAux);
+                  fflush(stdin);
+                  gets(palabraAux);
+                  // fflush(stdin);
+                  //scanf("%c",&palabraAux);
                   retorno = BorrarOcurrenciasPalabraEnTexto(texto, palabraAux);
                   imprimirResultado(retorno);
-                  delete palabraAux;
+                  //delete palabraAux;
                   break;
            case 6:
                   retorno = ImprimirTexto(texto);
