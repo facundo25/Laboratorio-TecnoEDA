@@ -71,38 +71,41 @@
 	<stdlib.h>
 	<stdio.h>
 
-1507073565 source:c:\users\facundo\documents\github\laboratorio-tecnoeda\diccionario.cpp
+1510874185 source:c:\users\facundo\documents\github\laboratorio-tecnoeda\diccionario.cpp
 	"Diccionario.h"
 	<stdlib.h>
 	<stdio.h>
 
-1505240870 c:\users\facundo\documents\github\laboratorio-tecnoeda\diccionario.h
+1510872207 c:\users\facundo\documents\github\laboratorio-tecnoeda\diccionario.h
+	<string.h>
 	"Constantes.h"
 
 1505240873 c:\users\facundo\documents\github\laboratorio-tecnoeda\constantes.h
 
-1507674889 source:c:\users\facundo\documents\github\laboratorio-tecnoeda\main.cpp
+1510873087 source:c:\users\facundo\documents\github\laboratorio-tecnoeda\main.cpp
 	<cstdlib>
 	<iostream>
 	<stdio.h>
 	"Texto.h"
 	"Diccionario.h"
+	<string.h>
 
 1507675509 c:\users\facundo\documents\github\laboratorio-tecnoeda\texto.h
 	"Constantes.h"
 	"Palabras.h"
 	"Diccionario.h"
 
-1507674889 c:\users\facundo\documents\github\laboratorio-tecnoeda\palabras.h
+1509399531 c:\users\facundo\documents\github\laboratorio-tecnoeda\palabras.h
 	"Constantes.h"
 	"Diccionario.h"
 
-1507846449 source:c:\users\facundo\documents\github\laboratorio-tecnoeda\palabras.cpp
+1508882455 source:c:\users\facundo\documents\github\laboratorio-tecnoeda\palabras.cpp
 	"Palabras.h"
 	<stdlib.h>
 	<stdio.h>
+	<iostream>
 
-1507847822 source:c:\users\facundo\documents\github\laboratorio-tecnoeda\texto.cpp
+1510873368 source:c:\users\facundo\documents\github\laboratorio-tecnoeda\texto.cpp
 	"Texto.h"
 	<stdlib.h>
 	<stdio.h>

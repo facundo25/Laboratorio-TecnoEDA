@@ -167,16 +167,16 @@ int main()
                   printf("Ingrese la palabra que desea agregar al diccionario: \n");
                   palabraAux = new char [MAX_LARGO_PALABRA];
                   fflush(stdin);
-                gets(palabraAux);
-                  retorno = IngresarPalabraDiccionario(D,palabraAux);
+                  gets(palabraAux);
+                  retorno = IngresarPalabraDiccionario(D, palabraAux);
                   imprimirResultado(retorno);
                   // delete palabraAux;
                   break;
            case 13:
                   printf("Ingrese la palabra que desea borrar del diccionario: \n");
                   palabraAux = new char [MAX_LARGO_PALABRA];
-               //   fflush(stdin);
-                  scanf("%c",&palabraAux);
+                  fflush(stdin);
+                  gets(palabraAux);
                   retorno = BorrarPalabraDiccionario(D, palabraAux);
                   imprimirResultado(retorno);
                   delete palabraAux;

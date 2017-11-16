@@ -21,4 +21,5 @@ bool PerteneceDiccionario(Diccionario, Cadena);
        Cuando el diccionario no tiene palabras debe mostrarse el mensaje "Diccionario vacio" */
 TipoRetorno ImprimirDiccionario(Diccionario D);
 
+void RemplazarPalabraDiccionario(Diccionario &, Diccionario &); /*Prototipo de la funcion ''reemplazar''*/
 #endif // DICCIONARIO_H_INCLUDED
