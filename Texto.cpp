@@ -167,25 +167,6 @@ TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea,
     }
     }
 
-  /*int contadorLinea = 0;
-  while (texto != NULL){
-        printf("entro aca");
-        int contadorPalabra = 0;
-        while ( texto->ptrPalabra != NULL){
-            printf("aca tambien entro");
-            contadorPalabra ++;
-            if (strcmp(palabraABorrar, texto->ptrPalabra->pal) == 0){
-                    BorrarPalabra(texto->ptrPalabra, contadorPalabra);
-                    return OK;
-                }
-        }
-
-  }
-
-}
-
-*/
-
 
 
 TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) {
