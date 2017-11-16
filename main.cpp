@@ -147,14 +147,13 @@ int main()
            case 10:
                   printf("Ingrese la palabra que desea borrar: \n");
                   palabraAux = new char [MAX_LARGO_PALABRA];
-                 // fflush(stdin);
-                  scanf("%c",&palabraAux);
+                  fflush(stdin);
+                  gets(palabraAux);
                   printf("Ingrese la posicion de la linea donde se debe borrar la palabra (debe ser >= 1 y <= cant lineas): \n");
-                 // fflush(stdin);
+                  fflush(stdin);
                   scanf("%d",&posicionLinea);
                   retorno =  BorrarOcurrenciasPalabraEnLinea(texto,posicionLinea,palabraAux);
                   imprimirResultado(retorno);
-                  delete palabraAux;
                   break;
            case 11:
                   printf("Ingrese la posicion de la linea que desea imprimir (debe ser >= 1 y <= cant lineas): \n");
