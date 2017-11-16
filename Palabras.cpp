@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 /* ---- FUNCIONES PRIMITIVAS --- */
@@ -130,7 +131,17 @@ return OK;
 }
 
 TipoRetorno BorrarOcurrenciasPalabra(Palabras &palabras, Cadena palabraABorrar) {
-  return NO_IMPLEMENTADA;
+
+        int contadorPalabra = 0;
+        while ( palabras->ptrPalabras != NULL){
+                palabras->ptrPalabras;
+            contadorPalabra ++;
+        if (strcmp(palabraABorrar, palabras->ptrPalabras->pal) == 0){
+            BorrarPalabra(palabras->ptrPalabras, contadorPalabra);
+            }
+
+        }
+        return OK;
 }
 
 void BorrarTodoPalabras(Palabras &palabras) {

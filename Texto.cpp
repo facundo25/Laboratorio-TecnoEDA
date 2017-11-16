@@ -30,7 +30,7 @@ void InsertarFinal(Texto &texto){
 }
 
 bool TextoEsVacio(Texto texto){
-    if (texto = NULL){
+    if (texto == NULL){
         return true;
     }
     return false;
@@ -140,32 +140,20 @@ TipoRetorno BorrarTodo(Texto &texto) {
 
 TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea, Cadena palabraABorrar) {
     int contadorPalabra = 0;
-    int contadorLineas = 1;
+    int contadorLineas = 0;
     int cantidad = contarLineas(texto);
     //printf("%d", cantidad);
     //if ((posicionLinea >=1)&&(posicionLinea <= cantidad)){
             for (int i=0; i < posicionLinea; i++){
                 texto = texto->ptrTexto;
                 contadorLineas ++;
+                printf("CONTADOR DE LINEAS: %d", contadorLineas);
                     if (posicionLinea == contadorLineas ){
-                        while ( texto->ptrPalabra != NULL){
-                            printf("El valor de la palabra es %d", contadorPalabra);
-                                if (strcmp(palabraABorrar, texto->ptrPalabra->pal) == 0){
-                                BorrarPalabra(texto->ptrPalabra, contadorPalabra);
-                                contadorPalabra ++; }
-                                 else {
-                                    return ERROR;
+                        BorrarOcurrenciasPalabra(texto->ptrPalabra, palabraABorrar);
 
-            }
-
-
-    }
-    //printf("Linea ingresada no válida ...\n");
-    //return ERROR;
-
+                    }
+        }
 }
-    }
-    }
 
 
 
