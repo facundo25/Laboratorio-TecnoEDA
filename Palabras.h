@@ -3,7 +3,6 @@
 #include "Constantes.h"
 #include "Diccionario.h"
 
-
 typedef struct _palabra {
     _palabra *ptrPalabras;
     Cadena pal;
@@ -13,11 +12,10 @@ typedef struct _palabra {
 
 bool palabraEsVacia (Palabras palabra);
 
-
     /* Crea un conjunto de palabras vacio */
 Palabras CrearPalabras();
     /* Inserta una palabra en la posicion dada */
-TipoRetorno InsertarPalabra(Palabras &, Posicion, Cadena);
+TipoRetorno InsertarPalabra(Palabras &, Posicion, Cadena, Palabras &);
     /* Borra la palabra que se encuentra en la posición dada */
 TipoRetorno BorrarPalabra(Palabras &, Posicion);
     /* Borra todas las ocurrencias de una palabra */
@@ -34,5 +32,5 @@ TipoRetorno PalabraEnPosicion(Palabras, Posicion, Cadena &);
 /** ------------------Para Parte 2------------------------ **/
 // Muestra solamente las palabras que no se encuentran en el dicionario.
 TipoRetorno ImprimirPalabrasIncorrectas(Palabras, Diccionario);
-
+TipoRetorno ImprimirUltimasPalabras(Palabras);
 #endif // PALABRAS_H_INCLUDED

@@ -1,6 +1,5 @@
 #ifndef TEXTO_H_INCLUDED
 #define TEXTO_H_INCLUDED
-
 #include "Constantes.h"
 #include "Palabras.h"
 #include "Diccionario.h"
@@ -8,9 +7,9 @@
 
 
 typedef struct _texto {
-    //int info;
     _texto * ptrTexto;
-    _palabra * ptrPalabra;
+    _palabra *ptrPalabra;
+    _palabra *ptrUltima;
 } * Texto;
 
 void InsertarPrincipio(Texto &);
@@ -60,6 +59,6 @@ TipoRetorno ImprimirTextoIncorrecto(Texto, Diccionario);
 // El orden en el que se muestran las palabras debe ser el siguiente: primero la
 // última palabra ingresada, luego la penúltima, y así sucesivamente.
 // Si nunca se ingresaron palabras se debe mostrar "No se ingresaron palabras".
-TipoRetorno ImprimirUltimasPalabras(Texto);
+
 
 #endif // TEXTO_H_INCLUDED

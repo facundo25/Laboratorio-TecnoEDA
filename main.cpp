@@ -50,6 +50,7 @@ void imprimirResultado(int retorno) {
 int main()
 {
 
+    Palabras ultima = CrearPalabras();
     Texto texto = CrearTexto();
     Diccionario D = CrearDiccionario();
     Palabras palabra = CrearPalabras();
@@ -60,6 +61,7 @@ int main()
     Posicion posicionPalabra = 0;
     char opcion = 'n';
     Cadena palabraAux = NULL;
+    Cadena palult = NULL;
     do {
         menu();
         scanf("%d",&numOper);
@@ -98,11 +100,8 @@ int main()
                   palabraAux = new char [MAX_LARGO_PALABRA];
                   fflush(stdin);
                   gets(palabraAux);
-                  // fflush(stdin);
-                  //scanf("%c",&palabraAux);
                   retorno = BorrarOcurrenciasPalabraEnTexto(texto, palabraAux);
                   imprimirResultado(retorno);
-                  //delete palabraAux;
                   break;
            case 6:
                   retorno = ImprimirTexto(texto);
@@ -131,6 +130,7 @@ int main()
                   fflush(stdin);
                   scanf(" %d",&posicionPalabra);
                   retorno = InsertarPalabraEnLinea(texto, posicionLinea, posicionPalabra, palabraAux);
+
                   imprimirResultado(retorno);
                   //delete palabraAux;
                   break;
@@ -190,8 +190,9 @@ int main()
                   imprimirResultado(retorno);
                   break;
            case 16:
-                  //retorno =  ImprimirUltimasPalabras(texto);
-                  //imprimirResultado(retorno);
+
+                  retorno = ImprimirUltimasPalabras(texto->ptrUltima);
+                  imprimirResultado(retorno);
                   break;
            case 17:
                   printf("Esta seguro de que desea salir (s/n)?: \n");

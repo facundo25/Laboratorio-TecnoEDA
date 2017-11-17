@@ -13,6 +13,15 @@ Palabras CrearPalabras(){
   return p;
 }
 
+TipoRetorno ImprimirUltimasPalabras(Palabras ultima){
+        while (ultima != NULL){
+                printf("%s ", ultima->pal);
+                ultima = ultima->ptrPalabras;
+            }
+
+return OK;
+}
+
 void insertarPalabraPrincipio(Palabras &palabra, Cadena cadenaPalabra){
     Palabras aux = new _palabra;
     aux->pal = cadenaPalabra;
@@ -50,11 +59,12 @@ int contarPalabras(Palabras palabras){
     return count;
 }
 
-TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena palabraAIngresar) {
+TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena palabraAIngresar, Palabras &ultima) {
 
 
     Palabras aux = palabra;
     int contar = 0;
+    Cadena palult = palabraAIngresar;
 
     while(aux != NULL){
 
@@ -70,12 +80,14 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
 
     if (contar==0){
         insertarPalabraPrincipio(palabra, palabraAIngresar);
-
+        insertarPalabraPrincipio(ultima, palult);
         printf("PALABRA INGRESADA CORRECTAMENTE al principio era vacio.. \n");
         ImprimirPalabras(palabra);
         return OK;
+
     }if(posicionPalabra==1){
         insertarPalabraPrincipio(palabra, palabraAIngresar);
+        insertarPalabraPrincipio(ultima, palult);
         printf("PALABRA INGRESADA CORRECTAMENTE al principio.. \n");
         return OK;
     }if((posicionPalabra > 1) && (posicionPalabra <= contar)){
@@ -89,12 +101,14 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
                         nueva->pal = palabraAIngresar;
                         nueva->ptrPalabras = aux1->ptrPalabras;
                         aux1->ptrPalabras = nueva;
+                        insertarPalabraPrincipio(ultima, palult);
                         return OK;
                     }
                 aux1 = aux1->ptrPalabras;
                 cont++;
             }}if(posicionPalabra == contar+1){
                 insertarPalabraFinal(palabra, palabraAIngresar);
+                insertarPalabraPrincipio(ultima, palult);
             }else{
         printf("Mas de la cantidad de palabras, cero o menos... \n");
         return ERROR;
@@ -132,11 +146,11 @@ return OK;
 }
 
 TipoRetorno BorrarOcurrenciasPalabra(Palabras &palabras, Cadena palabraABorrar) {
-        printf("\n ENTRO A LA FUNCION BORRAROCURRENCIAPALABRA");
+
         int contadorPalabra = 0;
         while ( palabras != NULL){
             contadorPalabra ++;
-            printf("\n ENTRO AL WHILE E ITERO LAS PALABRAS");
+
 
             if (strcmp(palabraABorrar, palabras->pal) == 0){
                 BorrarPalabra(palabras->ptrPalabras, contadorPalabra);
@@ -178,4 +192,3 @@ TipoRetorno ImprimirPalabrasIncorrectas(Palabras palabras, Diccionario D) {
                 palabras = palabras->ptrPalabras;
             }
 }
-

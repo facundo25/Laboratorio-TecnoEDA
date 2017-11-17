@@ -153,22 +153,14 @@ TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea,
 
 TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) {
 
-  int contadorLinea = 0;
+
   while (texto != NULL){
-        contadorLinea ++;
-        printf("entro aca");
-        int contadorPalabra = 0;
-        while ( texto->ptrPalabra != NULL){
-            printf("aca tambien entro");
-            contadorPalabra ++;
-            if (strcmp(palabraABorrar, texto->ptrPalabra->pal) == 0){
-                    BorrarPalabra(texto->ptrPalabra, contadorPalabra);
-                    return OK;
-                }
-        }
+        if (strcmp(texto->ptrPalabra->pal, palabraABorrar) == 0){
+        BorrarOcurrenciasPalabra(texto->ptrPalabra, palabraABorrar);
 
   }
-
+texto= texto->ptrTexto;
+}
 }
 
 TipoRetorno ImprimirTexto(Texto texto){
@@ -197,7 +189,8 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
             for (int i=1; i < posicionLinea; i++){
                 texto = texto->ptrTexto;
             }
-            InsertarPalabra(texto->ptrPalabra, posicionPalabra, palabraAIngresar);
+            InsertarPalabra(texto->ptrPalabra, posicionPalabra, palabraAIngresar, texto->ptrUltima);
+
 
     }
     printf("Linea ingresada no válida ...\n");
