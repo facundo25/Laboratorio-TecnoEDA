@@ -186,8 +186,8 @@ int main()
                   imprimirResultado(retorno);
                   break;
            case 15:
-                  //retorno = ImprimirTextoIncorrecto(texto, D);
-                  //imprimirResultado(retorno);
+                  retorno = ImprimirTextoIncorrecto(texto, D);
+                  imprimirResultado(retorno);
                   break;
            case 16:
                   //retorno =  ImprimirUltimasPalabras(texto);

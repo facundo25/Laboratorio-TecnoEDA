@@ -1,4 +1,5 @@
 #include "Palabras.h"
+#include "Texto.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
@@ -168,6 +169,11 @@ TipoRetorno PalabraEnPosicion(Palabras palabras, Posicion posicionPalabra, Caden
 /** -----------------Para Parte 2----------------------**/
 
 TipoRetorno ImprimirPalabrasIncorrectas(Palabras palabras, Diccionario D) {
-  return NO_IMPLEMENTADA;
+            while (palabras != NULL){
+                if (!PerteneceDiccionario(D, palabras->pal)){
+                    printf("%s ", palabras->pal);
+                }
+                palabras = palabras->ptrPalabras;
+            }
 }
 
