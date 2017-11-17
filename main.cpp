@@ -186,8 +186,8 @@ int main()
                   imprimirResultado(retorno);
                   break;
            case 15:
-                  //retorno = ImprimirTextoIncorrecto(texto, D);
-                  //imprimirResultado(retorno);
+                  retorno = ImprimirTextoIncorrecto(texto, D);
+                  imprimirResultado(retorno);
                   break;
            case 16:
                   //retorno =  ImprimirUltimasPalabras(texto);
@@ -201,6 +201,17 @@ int main()
                      salir = true;
                   }
                   break;
+          /*  case 18:
+                    printf("Ingrese la palabra que desea verificar del diccionario: \n");
+                  palabraAux = new char [MAX_LARGO_PALABRA];
+                  fflush(stdin);
+                  gets(palabraAux);
+                  if(PerteneceDiccionario(D, palabraAux)){
+                    printf("Encontre palabra...\n");
+                  }else{
+                    printf("No encontre nada..\n");
+                  }
+                  break; */
            default:
                    printf("No ingreso una opcion valida, vuelva a intentarlo...\n");
                    getchar();

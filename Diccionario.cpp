@@ -68,7 +68,18 @@ TipoRetorno BorrarPalabraDiccionario(Diccionario &D, Cadena palabraABorrar) {
 }
 
 bool PerteneceDiccionario(Diccionario D, Cadena palabra) {
-  return false;
+    if (D==NULL){
+            return false;
+        }else{
+            int N = strcmp(palabra, D->pald);
+            if (0 > N){
+                PerteneceDiccionario(D->izq, palabra);
+            }else if (0 < N){
+                PerteneceDiccionario(D->der, palabra);
+            }else if (0 == N){
+                return true;
+            }
+}
 }
 
 TipoRetorno ImprimirDiccionario(Diccionario D) {

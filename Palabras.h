@@ -1,8 +1,8 @@
 #ifndef PALABRAS_H_INCLUDED
 #define PALABRAS_H_INCLUDED
-
 #include "Constantes.h"
 #include "Diccionario.h"
+
 
 typedef struct _palabra {
     _palabra *ptrPalabras;

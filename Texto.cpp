@@ -238,3 +238,16 @@ TipoRetorno ImprimirLinea(Texto texto, Posicion posicionLinea) {
 return OK;
 
 }
+
+TipoRetorno ImprimirTextoIncorrecto(Texto texto, Diccionario D){
+    int contador = 0;
+    while(texto!=NULL){
+            contador ++;
+            printf("%d: ", contador);
+            ImprimirPalabrasIncorrectas(texto->ptrPalabra, D);
+            texto = texto->ptrTexto;
+            printf("\n");
+        }
+        return OK;
+
+}
