@@ -139,22 +139,16 @@ TipoRetorno BorrarTodo(Texto &texto) {
 
 
 TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea, Cadena palabraABorrar) {
-    int contadorPalabra = 0;
     int contadorLineas = 0;
-    int cantidad = contarLineas(texto);
-    //printf("%d", cantidad);
-    //if ((posicionLinea >=1)&&(posicionLinea <= cantidad)){
-            for (int i=0; i < posicionLinea; i++){
-                texto = texto->ptrTexto;
-                contadorLineas ++;
-                printf("CONTADOR DE LINEAS: %d", contadorLineas);
-                    if (posicionLinea == contadorLineas ){
+            for (int i=1; i <= posicionLinea; i++){
+                if (posicionLinea == i ){
                         BorrarOcurrenciasPalabra(texto->ptrPalabra, palabraABorrar);
+                        }
+                texto = texto->ptrTexto;
 
-                    }
-        }
 }
 
+}
 
 
 TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) {

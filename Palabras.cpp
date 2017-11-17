@@ -131,17 +131,19 @@ return OK;
 }
 
 TipoRetorno BorrarOcurrenciasPalabra(Palabras &palabras, Cadena palabraABorrar) {
-
+        printf("\n ENTRO A LA FUNCION BORRAROCURRENCIAPALABRA");
         int contadorPalabra = 0;
-        while ( palabras->ptrPalabras != NULL){
-                palabras->ptrPalabras;
+        while ( palabras != NULL){
             contadorPalabra ++;
-        if (strcmp(palabraABorrar, palabras->ptrPalabras->pal) == 0){
-            BorrarPalabra(palabras->ptrPalabras, contadorPalabra);
-            }
+            printf("\n ENTRO AL WHILE E ITERO LAS PALABRAS");
 
+            if (strcmp(palabraABorrar, palabras->pal) == 0){
+                BorrarPalabra(palabras->ptrPalabras, contadorPalabra);
+
+            }
+            palabras = palabras->ptrPalabras;
         }
-        return OK;
+
 }
 
 void BorrarTodoPalabras(Palabras &palabras) {
