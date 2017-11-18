@@ -193,6 +193,7 @@ int main()
                   break;
            case 17:
                   printf("Esta seguro de que desea salir (s/n)?: \n");
+                  fflush(stdin);
                   scanf("%c",&opcion);
                   if (opcion == 's' || opcion == 'S'){
                      printf("Saliendo...\n");
