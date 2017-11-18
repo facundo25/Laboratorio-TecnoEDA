@@ -6,7 +6,7 @@
 
 Texto CrearTexto(){
   Texto t = NULL;
-  return t;
+   return t;
 }
 
 /*-------- Primitivas -------------*/
@@ -146,8 +146,8 @@ TipoRetorno BorrarOcurrenciasPalabraEnLinea(Texto texto, Posicion posicionLinea,
                         }
                 texto = texto->ptrTexto;
 
-}
-
+    }
+    return OK;
 }
 
 
@@ -155,13 +155,12 @@ TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) 
 
 
   while (texto != NULL){
-        if (strcmp(texto->ptrPalabra->pal, palabraABorrar) == 0){
         BorrarOcurrenciasPalabra(texto->ptrPalabra, palabraABorrar);
-
+        texto= texto->ptrTexto;
   }
-texto= texto->ptrTexto;
+
 }
-}
+
 
 TipoRetorno ImprimirTexto(Texto texto){
 

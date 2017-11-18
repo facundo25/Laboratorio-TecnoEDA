@@ -3,6 +3,7 @@
 #include "Constantes.h"
 #include "Diccionario.h"
 
+
 typedef struct _palabra {
     _palabra *ptrPalabras;
     Cadena pal;

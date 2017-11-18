@@ -43,13 +43,8 @@ void imprimirResultado(int retorno) {
      }
 }
 
-
-
-
-
 int main()
 {
-
     Palabras ultima = CrearPalabras();
     Texto texto = CrearTexto();
     Diccionario D = CrearDiccionario();
@@ -191,6 +186,10 @@ int main()
                   break;
            case 16:
 
+                  if (texto==NULL){
+                    printf("No se ingresaron palabras...\n ");
+                    break;
+                  }
                   retorno = ImprimirUltimasPalabras(texto->ptrUltima);
                   imprimirResultado(retorno);
                   break;
@@ -202,17 +201,7 @@ int main()
                      salir = true;
                   }
                   break;
-          /*  case 18:
-                    printf("Ingrese la palabra que desea verificar del diccionario: \n");
-                  palabraAux = new char [MAX_LARGO_PALABRA];
-                  fflush(stdin);
-                  gets(palabraAux);
-                  if(PerteneceDiccionario(D, palabraAux)){
-                    printf("Encontre palabra...\n");
-                  }else{
-                    printf("No encontre nada..\n");
-                  }
-                  break; */
+
            default:
                    printf("No ingreso una opcion valida, vuelva a intentarlo...\n");
                    getchar();

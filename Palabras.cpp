@@ -14,13 +14,23 @@ Palabras CrearPalabras(){
 }
 
 TipoRetorno ImprimirUltimasPalabras(Palabras ultima){
-        while (ultima != NULL){
-                printf("%s ", ultima->pal);
+        int cont = 0;
+        if (ultima!=NULL){
+                while (ultima!=NULL){
+                cont++;
+                printf("\n %s \n", ultima->pal);
                 ultima = ultima->ptrPalabras;
+        if (cont == MAX_CANT_ULTIMAS_PALABRAS){
+            break;
+        }
             }
+            } else {
+                printf("\n No se ingresaron palabras\n ");
+                return ERROR;
+                }
+        return OK;
+    }
 
-return OK;
-}
 
 void insertarPalabraPrincipio(Palabras &palabra, Cadena cadenaPalabra){
     Palabras aux = new _palabra;
@@ -147,16 +157,16 @@ return OK;
 
 TipoRetorno BorrarOcurrenciasPalabra(Palabras &palabras, Cadena palabraABorrar) {
 
+        Palabras aux = new _palabra;
+        aux = palabras;
         int contadorPalabra = 0;
-        while ( palabras != NULL){
-            contadorPalabra ++;
-
-
-            if (strcmp(palabraABorrar, palabras->pal) == 0){
-                BorrarPalabra(palabras->ptrPalabras, contadorPalabra);
-
-            }
-            palabras = palabras->ptrPalabras;
+        while ( aux != NULL){
+                contadorPalabra ++;
+                if (strcmp(palabraABorrar, aux->pal) == 0){
+                    BorrarPalabra(palabras, contadorPalabra);
+                    BorrarOcurrenciasPalabra(palabras, palabraABorrar);
+                }
+            aux = aux->ptrPalabras;
         }
 
 }
