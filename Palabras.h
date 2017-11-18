@@ -9,7 +9,6 @@ typedef struct _palabra {
     Cadena pal;
 } * Palabras;
 
-/* PRIMITIVAS DE PALABRA */
 
 bool palabraEsVacia (Palabras palabra);
 
@@ -31,6 +30,7 @@ unsigned int CantidadPalabras(Palabras);
 TipoRetorno PalabraEnPosicion(Palabras, Posicion, Cadena &);
 
 /** ------------------Para Parte 2------------------------ **/
+
 // Muestra solamente las palabras que no se encuentran en el dicionario.
 TipoRetorno ImprimirPalabrasIncorrectas(Palabras, Diccionario);
 TipoRetorno ImprimirUltimasPalabras(Palabras);

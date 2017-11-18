@@ -61,6 +61,7 @@ return false;
 }
 
 int contarPalabras(Palabras palabras){
+
     int count = 0;
     while(palabras!=NULL){
         count++;
@@ -70,7 +71,6 @@ int contarPalabras(Palabras palabras){
 }
 
 TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena palabraAIngresar, Palabras &ultima) {
-
 
     Palabras aux = palabra;
     int contar = 0;
@@ -83,7 +83,7 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
         }
 
     if (contar >= MAX_CANT_PALABRAS_X_LINEA){
-        printf(" ERROR: La linea llegó el límite de palabras permitido... \n");
+        printf("\n ERROR: La linea llegó el límite de palabras permitido... \n");
 
         return ERROR;
     }
@@ -91,15 +91,16 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
     if (contar==0){
         insertarPalabraPrincipio(palabra, palabraAIngresar);
         insertarPalabraPrincipio(ultima, palult);
-        printf("PALABRA INGRESADA CORRECTAMENTE al principio era vacio.. \n");
+        printf("\nPALABRA INGRESADA CORRECTAMENTE... \n");
         ImprimirPalabras(palabra);
         return OK;
 
     }if(posicionPalabra==1){
         insertarPalabraPrincipio(palabra, palabraAIngresar);
         insertarPalabraPrincipio(ultima, palult);
-        printf("PALABRA INGRESADA CORRECTAMENTE al principio.. \n");
+        printf("\n PALABRA INGRESADA CORRECTAMENTE... \n");
         return OK;
+
     }if((posicionPalabra > 1) && (posicionPalabra <= contar)){
             Palabras aux1 = palabra;
             int cont = 1;
@@ -120,7 +121,8 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
                 insertarPalabraFinal(palabra, palabraAIngresar);
                 insertarPalabraPrincipio(ultima, palult);
             }else{
-        printf("Mas de la cantidad de palabras, cero o menos... \n");
+
+        printf("ERROR: Mas de la cantidad de palabras, cero o menos... \n");
         return ERROR;
     }
 }
@@ -128,10 +130,11 @@ TipoRetorno InsertarPalabra(Palabras &palabra, Posicion posicionPalabra, Cadena 
 
 
 TipoRetorno BorrarPalabra(Palabras &palabras, Posicion posicionPalabra) {
+
             int cantidad = contarPalabras(palabras);
 
             if (cantidad == 0){
-                printf("Linea sin palabras");
+                printf("\nERROR: Linea sin palabras...\n");
                 return ERROR;
             }else {
 
@@ -195,6 +198,7 @@ TipoRetorno PalabraEnPosicion(Palabras palabras, Posicion posicionPalabra, Caden
 /** -----------------Para Parte 2----------------------**/
 
 TipoRetorno ImprimirPalabrasIncorrectas(Palabras palabras, Diccionario D) {
+
             while (palabras != NULL){
                 if (!PerteneceDiccionario(D, palabras->pal)){
                     printf("%s ", palabras->pal);

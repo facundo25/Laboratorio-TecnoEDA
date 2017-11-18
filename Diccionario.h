@@ -22,4 +22,5 @@ bool PerteneceDiccionario(Diccionario, Cadena);
 TipoRetorno ImprimirDiccionario(Diccionario D);
 
 void RemplazarPalabraDiccionario(Diccionario &, Diccionario &); /*Prototipo de la funcion ''reemplazar''*/
+
 #endif // DICCIONARIO_H_INCLUDED

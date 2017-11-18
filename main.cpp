@@ -63,7 +63,7 @@ int main()
         switch (numOper){
             case 1:
                   retorno = InsertarLinea(texto);
-                 // imprimirResultado(retorno);
+                  imprimirResultado(retorno);
                   break;
            case 2:
                   printf("Ingrese la posicion de la nueva linea (debe ser >= 1 y <= cant lineas + 1): \n");
@@ -71,7 +71,7 @@ int main()
                   scanf("%d",&posicionLinea);
                   //fflush(stdin);
                   retorno = InsertarLineaEnPosicion(texto,posicionLinea);
-                  //imprimirResultado(retorno);
+                  imprimirResultado(retorno);
                   break;
            case 3:
                   printf("Ingrese la posicion de la linea a borrar (debe ser >= 1 y <= cant lineas): \n");
@@ -79,7 +79,7 @@ int main()
 
                   scanf("%d",&posicionLinea);
                   retorno = BorrarLinea(texto,posicionLinea);
-                  //imprimirResultado(retorno);
+                  imprimirResultado(retorno);
                   break;
            case 4:
                 printf("Esta seguro de que desea borrar todas las lineas del texto (s/n)?: \n");
@@ -127,7 +127,7 @@ int main()
                   retorno = InsertarPalabraEnLinea(texto, posicionLinea, posicionPalabra, palabraAux);
 
                   imprimirResultado(retorno);
-                  //delete palabraAux;
+
                   break;
            case 9:
                   printf("Ingrese la posicion de la linea donde se encuentra la palabra a borrar (debe ser >= 1 y <= cant lineas): \n");
@@ -152,7 +152,6 @@ int main()
                   break;
            case 11:
                   printf("Ingrese la posicion de la linea que desea imprimir (debe ser >= 1 y <= cant lineas): \n");
-                  //fflush(stdin);
                   posicionLinea = 0;
                   scanf("%d",&posicionLinea);
                   retorno =  ImprimirLinea(texto, posicionLinea);
@@ -165,7 +164,6 @@ int main()
                   gets(palabraAux);
                   retorno = IngresarPalabraDiccionario(D, palabraAux);
                   imprimirResultado(retorno);
-                  // delete palabraAux;
                   break;
            case 13:
                   printf("Ingrese la palabra que desea borrar del diccionario: \n");

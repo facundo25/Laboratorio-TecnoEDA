@@ -4,12 +4,15 @@
 #include <string.h>
 #include "Palabras.h"
 
+
+
+/*-------- Primitivas -------------*/
+
 Texto CrearTexto(){
   Texto t = NULL;
    return t;
 }
 
-/*-------- Primitivas -------------*/
 
 void InsertarPrincipio(Texto &texto){
     Texto aux = new _texto;
@@ -43,7 +46,6 @@ int contarLineas(Texto texto){
     }
     return count;
 }
-/*-------- Primitivas -------------*/
 
 TipoRetorno InsertarLinea(Texto &texto) {
     if (texto == NULL){
@@ -61,14 +63,14 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
     int cant = contarLineas(texto);
     Texto aux = texto;
     if (cant==0){
-        printf("La lista es vacia.. \n");
+        printf("\nERROR: La lista es vacia... \n");
         return ERROR;
     }
     if(posicionLinea == 1){
         InsertarPrincipio(texto);
         return OK;
     }
-    //printf("Numero de lineas: %d\n", cant);
+
     if((posicionLinea > 1) && (posicionLinea <= cant)){
             aux = texto;
             int cont =1;
@@ -89,14 +91,14 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
 
                 int e = 0;
                 e = contarLineas(texto);
-                printf("Numero de lineas: %d\n", e);
+                printf("\n Numero de lineas: %d\n", e);
                 return OK;
 
             }
 
 
         else{
-        printf("Mas de la cantidad de lineas, cero o menos... \n");
+        printf(" \nERROR: Mas de la cantidad de lineas, cero o menos... \n");
         return ERROR;
     }
 }
@@ -104,7 +106,7 @@ TipoRetorno InsertarLineaEnPosicion(Texto &texto, Posicion posicionLinea) {
 TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
     int cantidad = contarLineas(texto);
     if(cantidad == 0){
-        printf("Es vacio...");
+        printf("\n ERROR: El texto NO tiene lineas a borrar...");
         return ERROR;
     }else{
             if((posicionLinea >= 1) && (posicionLinea <= cantidad)){
@@ -113,7 +115,7 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
             for(int i=1; i<posicionLinea; i++){
                 ante = nodo;
                 nodo = nodo->ptrTexto;
-
+                return OK;
             }if(ante == NULL){
                 texto = texto->ptrTexto;
                 free(ante);
@@ -123,7 +125,7 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
                 nodo = nodo->ptrTexto;
             return OK;
         }}else{
-            printf("No existe la posicion... \n");
+            printf("\nERROR: No existe la posicion... \n");
             return ERROR;
         }
 
@@ -132,7 +134,7 @@ TipoRetorno BorrarLinea(Texto &texto, Posicion posicionLinea) {
 }
 
 TipoRetorno BorrarTodo(Texto &texto) {
-    printf("Borrar TODO /n");
+    printf("\n Se borra todo el texto /n");
     texto = NULL;
   return OK;
 }
@@ -160,7 +162,6 @@ TipoRetorno BorrarOcurrenciasPalabraEnTexto(Texto texto, Cadena palabraABorrar) 
   }
 
 }
-
 
 TipoRetorno ImprimirTexto(Texto texto){
 
@@ -192,7 +193,7 @@ TipoRetorno InsertarPalabraEnLinea(Texto texto, Posicion posicionLinea,Posicion 
 
 
     }
-    printf("Linea ingresada no válida ...\n");
+    printf("\n ERROR: Linea ingresada no valida ...\n");
     return ERROR;
 
 }
@@ -207,7 +208,7 @@ TipoRetorno BorrarPalabraEnLinea(Texto texto, Posicion posicionLinea, Posicion p
             BorrarPalabra(texto->ptrPalabra, posicionPalabra);
         return OK;
     }
-    printf("Linea ingresada no válida ...\n");
+    printf("\n ERROR: Linea ingresada no valida ...\n");
     return ERROR;
  }
 
